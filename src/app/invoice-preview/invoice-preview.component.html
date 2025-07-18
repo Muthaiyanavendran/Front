@@ -1,0 +1,63 @@
+<!-- PDF Content Area -->
+<div #invoiceContent class="invoice-container">
+  <h2 class="invoice-title">Invoice</h2>
+
+  <div class="invoice-header">
+  <div class="logo-and-details">
+<img src="https://nims.nihilent.com/hrms/images/login_logo.jpg" alt="Logo" style="width: 100px; height: 100px;" />
+  </div>
+  <div class="company-info">
+    <h3>Your Company</h3>
+    <p>{{ invoiceData.companyAddress }}</p>
+  </div>
+</div>
+
+
+  <div class="billing-section">
+    <div class="bill-to">
+      <h3>Billed To</h3>
+      <p><strong>Name:</strong> {{ invoiceData.clientName }}</p>
+      <p><strong>Address:</strong> {{ invoiceData.streetAddress }}</p>
+      <p><strong>City/State/Country:</strong> {{ invoiceData.cityStateCountry }}</p>
+      <p><strong>Zip Code:</strong> {{ invoiceData.zipCode }}</p>
+    </div>
+  </div>
+
+  <table class="item-table">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of invoiceData.items">
+        <td>{{ item.name }}</td>
+        <td>{{ item.qty }}</td>
+        <td>{{ item.price | currency }}</td>
+        <td>{{ item.qty * item.price | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="totals">
+    <p><strong>Total:</strong> {{ getTotal() | currency }}</p>
+    <p><strong>Tax (10%):</strong> {{ getTax() | currency }}</p>
+    <p><strong>Grand Total:</strong> {{ getGrandTotal() | currency }}</p>
+  </div>
+
+  <!-- ✅ QR Code INCLUDED IN PDF -->
+  <div *ngIf="qrImage" class="qr-section">
+  <h3>QR Code</h3>
+  <img [src]="'data:image/png;base64,' + qrImage" alt="QR Code" />
+</div>
+
+
+<!-- Download Button: NOT included in PDF -->
+<div style="text-align: center; margin-top: 30px;">
+  <button (click)="downloadPDF()" style="padding: 10px 20px; font-weight: bold;">
+    Download PDF
+  </button>
+</div>

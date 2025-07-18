@@ -1,0 +1,12 @@
+<div style="display: flex; gap: 50px; padding: 20px;">
+  <app-invoice-form
+    [invoiceData]="invoiceData"
+    (invoiceDataChange)="updateInvoice($event)"
+    (qrGenerated)="receivedQR($event)">
+  </app-invoice-form>
+
+  <app-invoice-preview
+    [invoiceData]="invoiceData"
+    [qrImage]="qrImage"> <!-- Pass qrImage to preview -->
+  </app-invoice-preview>
+</div>
