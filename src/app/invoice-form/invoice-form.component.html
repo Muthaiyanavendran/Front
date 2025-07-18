@@ -1,43 +1,48 @@
-<h2>Invoice Form</h2>
+<h2 style="margin-bottom: 20px;">Invoice Form</h2>
 
-<form (ngSubmit)="generateInvoice()" #invoiceForm="ngForm" class="invoice-form">
+<form (ngSubmit)="generateInvoice()" #invoiceForm="ngForm" class="invoice-form" style="max-width: 600px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+
   <!-- Billing Details -->
-  <div class="form-section">
+  <div class="form-section" style="margin-bottom: 20px;">
     <label>Client Name</label>
-    <input type="text" [(ngModel)]="invoiceData.clientName" name="clientName" required />
+    <input type="text" [(ngModel)]="invoiceData.clientName" name="clientName" required class="input"/>
 
     <label>Street Address</label>
-    <input type="text" [(ngModel)]="invoiceData.streetAddress" name="streetAddress" required />
+    <input type="text" [(ngModel)]="invoiceData.streetAddress" name="streetAddress" required class="input"/>
 
     <label>City, State, Country</label>
-    <input type="text" [(ngModel)]="invoiceData.cityStateCountry" name="cityStateCountry" required />
+    <input type="text" [(ngModel)]="invoiceData.cityStateCountry" name="cityStateCountry" required class="input"/>
 
     <label>Zip Code</label>
-    <input type="text" [(ngModel)]="invoiceData.zipCode" name="zipCode" required />
+    <input type="text" [(ngModel)]="invoiceData.zipCode" name="zipCode" required class="input"/>
   </div>
 
   <!-- Invoice Meta -->
-  <div class="form-section">
+  <div class="form-section" style="margin-bottom: 20px;">
     <label>Invoice Number</label>
-    <input type="text" [(ngModel)]="invoiceData.invoiceNumber" name="invoiceNumber" required />
+    <input type="text" [(ngModel)]="invoiceData.invoiceNumber" name="invoiceNumber" required class="input"/>
 
     <label>Date</label>
-    <input type="date" [(ngModel)]="invoiceData.date" name="date" required />
+    <input type="date" [(ngModel)]="invoiceData.date" name="date" required class="input"/>
   </div>
 
   <!-- Items -->
-  <h3>Items</h3>
-  <div *ngFor="let item of invoiceData.items; let i = index" class="item-row">
-    <input type="text" [(ngModel)]="item.name" name="itemName{{i}}" placeholder="Item" required />
-    <input type="number" [(ngModel)]="item.qty" name="qty{{i}}" placeholder="Qty" required />
-    <input type="number" [(ngModel)]="item.price" name="price{{i}}" placeholder="Price" required />
-    <button type="button" (click)="removeItem(i)">Remove</button>
+  <h3 style="margin-top: 20px;">Items</h3>
+  <div *ngFor="let item of invoiceData.items; let i = index" class="item-row" style="display: flex; gap: 10px; margin-bottom: 10px;">
+    <input type="text" [(ngModel)]="item.name" name="itemName{{i}}" placeholder="Item" required class="input" style="flex: 2;"/>
+    <input type="number" [(ngModel)]="item.qty" name="qty{{i}}" placeholder="Qty" required class="input" style="flex: 1;"/>
+    <input type="number" [(ngModel)]="item.price" name="price{{i}}" placeholder="Price" required class="input" style="flex: 1;"/>
+    
+    <!-- Minus Button for Remove -->
+    <button type="button" (click)="removeItem(i)" style="background-color: #ff4d4d; color: white; border: none; padding: 4px 10px; border-radius: 4px;">−</button>
   </div>
 
-  <button type="button" (click)="addItem()">Add Item</button>
-<br /><br />
-<button (click)="generateInvoice()">Generate Invoice</button>
+  <!-- Plus Button for Add -->
+  <button type="button" (click)="addItem()" style="background-color: #4CAF50; color: white; border: none; padding: 8px 12px; border-radius: 5px; margin-top: 10px;">＋ Add Item</button>
+  
+  <br /><br />
 
-
+  <!-- Generate Invoice Button -->
+  <button type="submit" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 6px;">Generate Invoice</button>
 
 </form>
