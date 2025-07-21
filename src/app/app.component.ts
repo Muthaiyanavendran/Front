@@ -12,10 +12,10 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'qr-generator-ui';
 
-  qrImage: string = ''; // ✅ This stores QR from backend
+  qrImage: string = ''; //  This stores QR from backend
 
   invoiceData = {
-    invoiceNumber: 'INV-2025-001',
+    invoiceNumber: '',
     date: new Date().toISOString(),
     clientName: '',
     streetAddress: '',

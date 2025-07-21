@@ -35,7 +35,7 @@ export class InvoiceFormComponent {
 
 
   addItem() {
-    this.invoiceData.items.push({ name: '', qty: 1, price: 0 });
+    this.invoiceData.items.push({ name: '', qty: null, price: null});
   }
 
   removeItem(index: number) {
