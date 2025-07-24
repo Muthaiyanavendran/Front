@@ -1,0 +1,6 @@
+{
+  "root": "dist/your-angular-project-name",
+  "routes": {
+    "/**": "index.html"
+  }
+}

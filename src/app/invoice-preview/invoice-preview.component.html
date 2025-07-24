@@ -1,0 +1,87 @@
+<!-- PDF Content Area -->
+<h2 class="invoice-title" style="text-align: center; margin-bottom: 20px;">Invoice Preview</h2>
+
+<!-- ✅ START of PDF Content -->
+<div #invoiceContent class="invoice-container" style="padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #fff;">
+
+  <!-- Logo + Header Section -->
+  <div class="invoice-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <div class="logo-and-details">
+      <!-- ✅ Logo will be inside PDF -->
+      <!-- <img src="https://nims.nihilent.com/hrms/images/login_logo.jpg" alt="Logo" style="width: 100px; height: 100px;" /> -->
+      <img src="data:image/jpeg;base64,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" alt="Logo" style="width: 100px; height: 100px;" />
+
+    </div>
+    <div class="company-info" style="flex: 1; text-align: right;">
+      <p>{{ invoiceData.companyAddress }}</p>
+    </div>
+  </div>
+
+  <!-- Billing Info -->
+  <div class="billing-section" style="display: flex; gap: 20px; margin-bottom: 30px;">
+    <div class="bill-to" style="flex: 1; border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f9f9f9;">
+      <h3>Billed To</h3>
+      <p><strong>Name:</strong> {{ invoiceData.clientName }}</p>
+      <p><strong>Address:</strong> {{ invoiceData.streetAddress }}</p>
+      <p><strong>City/State/Country:</strong> {{ invoiceData.cityStateCountry }}</p>
+      <p><strong>Zip Code:</strong> {{ invoiceData.zipCode }}</p>
+    </div>
+
+    <div style="flex: 1; border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f9f9f9;">
+      <h3>Invoice Details</h3>
+      <p><strong>Invoice Number:</strong> {{ invoiceData.invoiceNumber }}</p>
+      <p><strong>Date of Issue:</strong> {{ invoiceData.date }}</p>
+      <p><strong>Client:</strong> {{ invoiceData.clientName }}</p>
+      <p><strong>City / Country:</strong> {{ invoiceData.cityStateCountry }}</p>
+    </div>
+  </div>
+
+  <!-- Items Table -->
+  <table class="item-table" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+    <thead style="background-color: #f0f0f0;">
+      <tr>
+        <th style="padding: 8px; border: 1px solid #ccc;">Item Name</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Quantity</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Price</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of invoiceData.items">
+        <td style="padding: 8px; border: 1px solid #ccc;">{{ item.name }}</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">{{ item.qty }}</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">{{ item.price | currency:'INR':'symbol' }}</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">{{ item.qty * item.price | currency:'INR':'symbol' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Totals -->
+  <div class="totals" style="text-align: right; margin-bottom: 20px;">
+    <p><strong>Total:</strong> {{ getTotal() | currency:'INR':'symbol' }}</p>
+  </div>
+
+  <!-- QR Code -->
+  <div *ngIf="qrImage" class="qr-section">
+    <h3 class="qr-title">QR Code</h3>
+    <img [src]="'data:image/png;base64,' + qrImage" alt="QR Code" class="qr-image" />
+  </div>
+
+</div>
+<!-- ✅ END of PDF Content -->
+
+<!-- ✅ This button is OUTSIDE the PDF area and will NOT be included -->
+<div style="text-align: center; margin-top: 30px;">
+  <button
+    (click)="downloadPDF()"
+    [disabled]="!isDownloadEnabled()"
+    [ngStyle]="{
+      'cursor': isDownloadEnabled() ? 'pointer' : 'not-allowed',
+      'background-color': isDownloadEnabled() ? '#007bff' : '#ccc',
+      'color': 'white',
+      'border': 'none'
+    }"
+    style="padding: 10px 20px; font-weight: bold; border-radius: 5px;">
+    Download PDF
+  </button>
+</div>
